@@ -1,27 +1,27 @@
 db.trips.aggregate([
-    {
-      $match: {
-        startTime: { $exists: 1, $gte: ISODate("2016-03-10"), $lt: ISODate("2016-03-11") },
-        stopTime: { $exists: 1 },
+  {
+    $match: {
+      startTime: { $exists: 1, $gte: ISODate("2016-03-10"), $lt: ISODate("2016-03-11") },
+      stopTime: { $exists: 1 },
+    },
+  },
+  {
+    $addFields: {
+      duracaoEmMinutos: {
+        $divide: [{ $subtract: ["$stopTime", "$startTime"] }, 60000],
       },
     },
-    {
-      $addFields: {
-        duracaoEmMinutos: {
-          $divide: [{ $subtract: ["$stopTime", "$startTime"] }, 60000],
-        },
-      },
+  },
+  {
+    $group: {
+      _id: null,
+      duracaoMediaEmMinutos: { $avg: "$duracaoEmMinutos" },
     },
-    {
-      $group: {
-        _id: null,
-        duracaoMediaEmMinutos: { $avg: "$duracaoEmMinutos" } 
-      },
+  },
+  {
+    $project: {
+      _id: 0,
+      duracaoMediaEmMinutos: { $ceil: "$duracaoMediaEmMinutos" },
     },
-    {
-      $project: {
-        _id: 0,
-        duracaoMediaEmMinutos:{ $ceil:"$duracaoMediaEmMinutos"}
-      },
-    },
-  ]).pretty();
+  },
+]).pretty();

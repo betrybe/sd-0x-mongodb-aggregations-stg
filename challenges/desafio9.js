@@ -1,7 +1,7 @@
 db.trips.aggregate([
   {
     $match: {
-      birthYear: { $exists: 1},
+      birthYear: { $exists: 1 },
     },
   },
   { $project: { birthYear: { $toInt: "$birthYear" } } },
