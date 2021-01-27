@@ -1,3 +1,9 @@
+### Termos e acordos
+
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
+---
+
 # Boas vindas ao repositório do projeto de Aggregations!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo e, se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
@@ -6,12 +12,69 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Instruções para entregar seu projeto:
+# Sumário
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+- [Habilidades](#habilidades)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+  - [Linter](#linter)
+  - [Instrução para estrutura dos arquivos](#Instrução-para-estrutura-dos-arquivos)
+  - [Instruções para restaurar o banco de dados `aggregations`](#Instruções-para-restaurar-o-banco-de-dados-aggregations)
+  - [Execução de testes unitários](#execução-de-testes-unitários)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Lista de requisitos](#lista-de-requisitos)
+    - [Desafio 1](#Desafio-1)
+    - [Desafio 2](#Desafio-2)
+    - [Desafio 3](#Desafio-3)
+    - [Desafio 4](#Desafio-4)
+    - [Desafio 5](#Desafio-5)
+    - [Desafio 6](#Desafio-6)
+    - [Desafio 7](#Desafio-7)
+    - [Desafio 8](#Desafio-8)
+    - [Desafio 9](#Desafio-9)
+    - [Desafio 10](#Desafio-10)
+    - [Desafio 11](#Desafio-11)
+    - [Desafio 12](#Desafio-12)
+    - [Desafio 13](#Desafio-13)
+    - [Desafio 14](#Desafio-14)
+- [Avisos Finais](#avisos-finais)
+
+---
+
+# Habilidades
+Neste projeto você será capaz de:
+- Executar buscas complexas no banco mongoDB
+- Usar os operadores de aggregation para fazer uma pipeline  
+
+---
+
+# Entregáveis
+
+## O que deverá ser desenvolvido?
+
+É isso aí, mais um bloco finalizado! Agora chegamos ao fim do último bloco do nosso módulo de NoSQL e MongoDB. Você viu vários métodos e operadores para executar operações de agregação de dados no **MongoDB**, e vai colocá-los em prática em mais um projeto.
+
+Para esse projeto, diferentemente dos outros, você vai utilizar vários datasets, de forma que possa praticar em vários cenários os diversos operadores e estágios do `aggregation pipeline`.
+
+Vamos trabalhar com dados do **IMDB**, dados sobre empresas aéreas e também dados que contenham registros de deslocamento de pessoas que utilizam bicicletas. Esperamos que você curta muito o projeto e fixe muito bem o que aprendeu até aqui!
+
+Então vamos lá aplicar seu conhecimento nesses cenários muito legais! 😉
+
+---
+
+# Instruções para entregar seu projeto:
+
+## ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-mongodb-aggregations.git`.
+  * `git clone https://github.com/betrybe/sd-0x-mongodb-aggregations`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-0x-project-mongodb-aggregations`
 
@@ -53,7 +116,58 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-# Entregáveis
+## DURANTE O DESENVOLVIMENTO
+
+* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA `challenges`** ⚠
+
+* Faça `commits` das alterações que você fizer no código regularmente
+
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+* Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+
+
+# Como desenvolver
+Se atente a [Instrução para estrutura dos arquivos](#Instrução-para-estrutura-dos-arquivos), ela é essencial para a avaliação do projeto.
+
+## Linter
+
+Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o *linter* localmente no projeto, execute o comando abaixo: 
+
+`npm run lint`
+
+⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
+
+Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
+
+---
+
+
+## Instrução para estrutura dos arquivos 
 
 Temos, neste projeto, uma série de desafios com diferentes níveis de complexidade. Cada desafio deve ser resolvido em seu arquivo próprio.
 
@@ -73,25 +187,13 @@ Temos, neste projeto, uma série de desafios com diferentes níveis de complexid
 
 4. Para entregar o seu projeto você deverá criar um _Pull Request_ neste repositório. Este _Pull Request_ deverá conter no diretório `challenges` os arquivos `desafio1.js`, `desafio2.js` e assim por diante até o `desafio14.js`, que conterão seu código `MQL` de cada desafio, respectivamente.
 
-## ⚠️ É importante que seus arquivos tenham exatamente estes nomes! ⚠️
+### ⚠️ É importante que seus arquivos tenham exatamente estes nomes! ⚠️
 
 Qualquer dúvida, procure a monitoria. Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
 ---
 
-## O que deverá ser desenvolvido?
-
-É isso aí, mais um bloco finalizado! Agora chegamos ao fim do último bloco do nosso módulo de NoSQL e MongoDB. Você viu vários métodos e operadores para executar operações de agregação de dados no **MongoDB**, e vai colocá-los em prática em mais um projeto.
-
-Para esse projeto, diferentemente dos outros, você vai utilizar vários datasets, de forma que possa praticar em vários cenários os diversos operadores e estágios do `aggregation pipeline`.
-
-Vamos trabalhar com dados do **IMDB**, dados sobre empresas aéreas e também dados que contenham registros de deslocamento de pessoas que utilizam bicicletas. Esperamos que você curta muito o projeto e fixe muito bem o que aprendeu até aqui!
-
-Então vamos lá aplicar seu conhecimento nesses cenários muito legais! 😉
-
----
-
-# Instruções para restaurar o banco de dados `aggregations`
+## Instruções para restaurar o banco de dados `aggregations`
 
 1. Abra o terminal e conecte-se à sua instância local do **MongoDB**. Se você receber uma mensagem de erro com uma mensagem como ***Connection refused***, tente reiniciar sua instância ([veja como fazer isso aqui](https://course.betrybe.com/back-end/mongodb/introduction/#conectando)).
 
@@ -108,7 +210,7 @@ Então vamos lá aplicar seu conhecimento nesses cenários muito legais! 😉
 
 ---
 
-## Implementações técnicas
+## Execução de testes unitários
 
 Para executar localmente os testes, é preciso escrever o seguinte no seu terminal, estando na raiz do diretório do projeto:
 ```sh
@@ -122,25 +224,31 @@ Esse script passará por **todos os desafios** e imprimirá um relatório indica
 ---
 
 # Requisitos do projeto
+## Lista de requisitos
 
 Monte queries para encontrar as informações dos desafios a seguir.
 
-##### Desafio 1
+---
+### Desafio 1
 
-Ajude a Trybe a escolher um filme para a próxima noite! Baseado em uma pesquisa, decidimos que os filmes em potencial devem atender aos seguintes critérios:
+Ajude a Trybe a escolher um filme para a próxima noite! Baseado em uma pesquisa, decidimos que os filmes em potencial devem atender alguns critérios, vejamos:
+
+#### Retorne todos os filmes que satisfaça, através de uma  _pipeline_, as condições abaixo
 
 * `imdb.rating` deve ser ao menos `7`;
 * `genres` não deve conter `Crime` ou `Horror`;
 * `rated` deve ser igual a `PG` ou `G`;
 * `languages` contém `English` e `Spanish`.
-
-Utilizando a coleção `movies`, faça um _pipeline_ que retorne todos esses filmes.
+* Utilize a coleção `movies`.
 
 Sua query deve retornar `41` documentos.
 
-##### Desafio 2
+### Desafio 2
 
-A escolha do filme da noite foi um sucesso, mas infelizmente ficamos com nossa banda de internet quase esgotada, e ainda precisamos de uma nova recomendação de filme. Para diminuir o volume de dados trafegados, utilizando o mesmo _pipeline_ anterior, retorne apenas os campos `title`, `rated`, `imdb.rating`, `imdb.votes` e `year`, modificando seus nomes para `titulo`, `avaliado`, `notaIMDB`, `votosIMDB` e `ano`, respectivamente.
+A escolha do filme da noite foi um sucesso, mas infelizmente ficamos com nossa banda de internet quase esgotada, e ainda precisamos de uma nova recomendação de filme. Para diminuir o volume de dados trafegados:
+
+#### Utilizando o mesmo _pipeline_ anterior, retorne apenas os campos `title`, `rated`, `imdb.rating`, `imdb.votes` e `year`, modificando seus nomes para `titulo`, `avaliado`, `notaIMDB`, `votosIMDB` e `ano`, respectivamente.
+
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -149,9 +257,11 @@ O resultado da sua query deve ter o seguinte formato:
 // Demais documentos
 ```
 
-##### Desafio 3
+### Desafio 3
 
-Agora que você tem os campos essenciais, retorne esses filmes ordenados por ano e nota IMDB de forma decrescente e por ordem alfabética.
+Agora que você tem os campos essenciais, os da última pipeline:
+
+#### Retorne esses filmes ordenados por ano e nota IMDB de forma decrescente e por ordem alfabética.
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -160,18 +270,24 @@ O resultado da sua query deve ter o seguinte formato:
 // Demais documentos
 ```
 
-##### Desafio 4
+### Desafio 4
 
 Nosso dataset de filmes tem muitos documentos diferentes, alguns com títulos "mais complexos" do que outros. Se quisermos analisar nossa coleção para encontrar títulos de filmes que têm uma só palavra no título, poderíamos buscar todos os filmes do dataset e processar isso na aplicação, mas o `Aggregation Framework` nos permite fazer isso diretamente no lado do banco de dados.
 
-Crie um _pipeline_ que adicione um campo `title_split` contendo a lista de palavras presentes em `title` e retorne apenas o novo campo `title_split` dos filmes com o título composto apenas de uma palavra, ordernando-os por `title` em ordem alfabética. Por exemplo, `"Cinderela"` e `"3-25"` devem entrar nessa contagem, mas `"Cast Away"` não.
+#### Crie uma _pipeline_ que retorna documentos  com o novo campo `title_split`, ela deve seguir as seguintes condições:
+
+- `title_split` deve conter uma lista de palavras presentes em `title`.
+- A pipeline deve retornar apenas filmes com o título composto apenas de uma palavra.
+- A pipeline deve ser ordenada por `title` em ordem alfabética.
+
+Por exemplo, `"Cinderela"` e `"3-25"` devem entrar nessa contagem, mas `"Cast Away"` não.
 
 Dica: utilize os operadores `$split`, `$size` e `$sort` para te auxiliar.
 [Documentação do $split](https://docs.mongodb.com/manual/reference/operator/aggregation/split/)
 
 Sua query deve retornar `8068` documentos.
 
-##### Desafio 5
+### Desafio 5
 
 Temos outra noite de filme aqui na Trybe e, desta vez, nós perguntamos à equipe quais são seus atores ou atrizes preferidos. Aqui está o resultado:
 
@@ -181,11 +297,17 @@ Temos outra noite de filme aqui na Trybe e, desta vez, nós perguntamos à equip
 * Kevin Spacey
 * George Clooney
 
-Para filmes lançados nos Estados Unidos (campo `countries`), com `tomatoes.viewer.rating` maior ou igual a `3`, crie um novo campo chamado `num_favs`, que represente quantos atores ou atrizes da nossa lista de favoritos aparecem no elenco (campo `cast`) do filme.
+#### Considerando esta lista, crie uma _pipeline_ que retorne o `title` do vigésimo quinto filme da agregação que satisfaz as seguintes condições:
+
+- `countries` é Estados unidos
+- `tomatoes.viewer.rating` maior ou igual a `3`
+-  Crie um novo campo chamado `num_favs`, que represente quantos atores ou atrizes da nossa lista de favoritos aparecem no elenco (campo `cast`) do filme.
+- Ordene os resultados por `num_favs`, `tomatoes.viewer.rating` e `title`, todos em ordem decrescente.
+<!-- Para filmes lançados nos Estados Unidos (campo `countries`), com `tomatoes.viewer.rating` maior ou igual a `3`, crie um novo campo chamado `num_favs`, que represente quantos atores ou atrizes da nossa lista de favoritos aparecem no elenco (campo `cast`) do filme.
 
 Ordene os resultados por `num_favs`, `tomatoes.viewer.rating` e `title`, todos em ordem decrescente.
 
-Por fim, utilizando o mesmo _pipeline_, responda: Qual o **título** do vigésimo quinto filme do resultado dessa agregação?
+Por fim, utilizando o mesmo _pipeline_, responda: Qual o **título** do vigésimo quinto filme do resultado dessa agregação? -->
 
 Dica: coloque a lista de atores e atrizes favoritos em uma variável e explore operadores como `$size` e [`$setIntersection`](https://docs.mongodb.com/manual/reference/operator/aggregation/setIntersection/index.html).
 
@@ -195,11 +317,13 @@ O resultado da sua query deve ter o seguinte formato:
 { "title" : <nome_do_filme> }
 ```
 
-##### Desafio 6
+### Desafio 6
 
 Vamos explorar mais operadores aritméticos!
 
-Considerando todos os filmes que ganharam o Oscar pelo menos uma vez, calcule o **maior valor**, **menor valor**, **média** e o **desvio padrão** das avaliações (campo `imdb.rating`). Para a média e o desvio padrão arredonde os valores para uma casa decimal utilizando o [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html).
+#### Considerando todos os filmes que ganharam o Oscar pelo menos uma vez, calcule o **maior valor**, **menor valor**, **média** e o **desvio padrão** das avaliações (campo `imdb.rating`)
+
+- Para a média e o desvio padrão arredonde os valores para uma casa decimal utilizando o [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html).
 
 Dica: todos os filmes na coleção, que já ganharam um Oscar, começam com uma sequência de string parecida com essas abaixo, portanto `$regex` é um operador bem-vindo:
 
@@ -221,11 +345,15 @@ O resultado da sua query deve ter o seguinte formato:
 }
 ```
 
-##### Desafio 7
+### Desafio 7
 
-Vamos nos aprofundar um pouco mais em nossa coleção de filmes. Queremos contar quantos filmes cada um dos atores e atrizes do elenco (`cast`) já participou e obter uma média do campo `imdb.rating` para cada um desses atores e atrizes.
+Vamos nos aprofundar um pouco mais em nossa coleção de filmes. 
 
-Traga o nome do ator ou atriz, número de filmes em que participou e a média do imdb desses filmes arredondada para uma casa decimal usando o operador [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html). Considere somente os membros do elenco de filmes com o idioma inglês (`English`). Exiba a lista em ordem decrescente de documentos pelo número de filmes e nome do ator ou atriz.
+#### Conte quantos filmes cada um dos atores e atrizes do elenco (`cast`) já participou e obter uma média do campo `imdb.rating` para cada um desses atores e atrizes.
+
+- Traga o nome do ator ou atriz, número de filmes em que participou e a média do imdb desses filmes arredondada para uma casa decimal usando o operador [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html). 
+- Considere somente os membros do elenco de filmes com o idioma inglês (`English`). 
+- Exiba a lista em ordem decrescente de documentos pelo número de filmes e nome do ator ou atriz.
 
 Sua query deve retornar `47055` documentos. Cada documento no resultado deve ter o seguinte formato:
 
@@ -233,11 +361,15 @@ Sua query deve retornar `47055` documentos. Cada documento no resultado deve ter
 { "_id" : "John Wayne", "numeroFilmes" : 107, "mediaIMDB" : 6.4 }
 ```
 
-##### Desafio 8
+### Desafio 8
 
 Trocando de contexto, vamos utilizar nosso outro dataset que contém dados de empresas aéreas, suas rotas, seus voos e parcerias.
 
-Liste todas as parcerias da coleção `air_alliances`, que voam rotas com um Boing 747 ou um Airbus A380 (que estão abreviados para `747` e `380` no campo `airplane` na coleção `air_routes`, respectivamente), e descubra qual delas tem o maior número de rotas com esses aviões.
+#### Liste todas as parcerias da coleção `air_alliances`, que voam rotas com um Boing 747 ou um Airbus A380 , para descobrir qual delas tem o maior número de rotas com esses aviões.
+
+No campo `airplane`, na coleção `air_routes`: 
+- Boing 747 está abreviado para `747`
+- Airbus A380 está abreviado para `380`
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -245,13 +377,15 @@ O resultado da sua query deve ter o seguinte formato:
 { "_id" : <nome_da_alianca>, "totalRotas" : <total_de_rotas> }
 ```
 
-##### Desafio 9
+### Desafio 9
 
-A partir da coleção `trips`, determine o menor e o maior ano de nascimento. Guarde essa informação, você precisará dela mais tarde.
+#### A partir da coleção `trips`, determine o menor e o maior ano de nascimento. 
 
-Não considere documentos com valores vazios (`""`) ou em que o campo não existe!
+- Guarde essa informação, você precisará dela mais tarde.
 
-Para este desafio utilize o operador [`$toInt`](https://docs.mongodb.com/manual/reference/operator/aggregation/toInt/index.html) para converter de string para valor inteiro.
+- Não considere documentos com valores vazios (`""`) ou em que o campo não existe!
+
+- Para este desafio utilize o operador [`$toInt`](https://docs.mongodb.com/manual/reference/operator/aggregation/toInt/index.html) para converter de string para valor inteiro.
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -259,9 +393,14 @@ O resultado da sua query deve ter o seguinte formato:
 { "maiorAnoNascimento" : <ano>, "menorAnoNascimento" : <ano> }
 ```
 
-##### Desafio 10
+### Desafio 10
 
-Encontre a média de viagens por tipo de usuário. Exiba o valor em horas com apenas duas casas decimais e a média de viagens ordenada de forma crescente. Para arredondar a média use o [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html).
+#### Encontre a média de viagens por tipo de usuário. 
+
+- Exiba o valor em horas com apenas duas casas decimais 
+- Exiba a média de viagens ordenada de forma crescente. 
+
+Para arredondar a média use o [`$round`](https://docs.mongodb.com/manual/reference/operator/aggregation/round/index.html).
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -270,9 +409,9 @@ O resultado da sua query deve ter o seguinte formato:
 // ...
 ```
 
-##### Desafio 11
+### Desafio 11
 
-Determine qual o dia da semana com maior número de viagens iniciadas.
+#### Determine qual o dia da semana com maior número de viagens iniciadas.
 
 Dica: Utilize o operador [`$dayOfWeek`](https://docs.mongodb.com/manual/reference/operator/aggregation/dayOfWeek/index.html) para extrair o dia da semana como um número de uma data.
 
@@ -282,9 +421,11 @@ O resultado da sua query deve ter o seguinte formato:
 { "diaDaSemana" : <dia_da_semana>, "total" : <total_de_viagens> }
 ```
 
-##### Desafio 12
+### Desafio 12
 
-Agora que você já sabe o dia com mais viagens, determine qual estação tem o maior número de viagens nesse dia da semana. Mas, para isso, adicione o que for necessário ao _pipeline_ anterior. Exiba apenas o nome da estação e o total de viagens.
+#### Usando a pipeline anterior que retornar o dia com mais viagens, determine qual estação tem o maior número de viagens nesse dia da semana.
+
+- Exiba apenas o nome da estação e o total de viagens.
 
 Dica: Utilize o operador [`$dayOfWeek`](https://docs.mongodb.com/manual/reference/operator/aggregation/dayOfWeek/index.html) para extrair o dia da semana como um número de uma data.
 
@@ -294,9 +435,11 @@ O resultado da sua query deve ter o seguinte formato:
 { "nomeEstacao" : <nome_da_estacao>, "total" : <total_de_viagens> }
 ```
 
-##### Desafio 13
+### Desafio 13
 
-Determine a duração média das viagens iniciadas no dia `10/03/2016`, em minutos. Arredonde o resultado para cima.
+#### Determine a duração média das viagens iniciadas no dia `10/03/2016`, em minutos.
+
+- Arredonde o resultado para cima.
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -304,9 +447,11 @@ O resultado da sua query deve ter o seguinte formato:
 { "duracaoMediaEmMinutos" : <duracao_media_em_minutos> }
 ```
 
-##### Desafio 14
+### Desafio 14
 
-Baseado na duração média das viagens, determine quais são as `5` bicicletas que foram mais utilizadas. Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
+#### Baseado na duração média das viagens, determine quais são as `5` bicicletas que foram mais utilizadas. 
+
+- Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
 
 O resultado da sua query deve ter o seguinte formato:
 
@@ -318,38 +463,6 @@ O resultado da sua query deve ter o seguinte formato:
 { "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
 ```
 
----
-
-### DURANTE O DESENVOLVIMENTO
-
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA `challenges`** ⚠
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
-
-Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ---
 
@@ -358,3 +471,13 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV 🚀
+
+# Avisos Finais
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+
+---
